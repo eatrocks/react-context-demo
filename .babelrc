@@ -1,0 +1,74 @@
+{
+  "env": {
+    "development": {
+      "presets": ["next/babel"],
+      "plugins": [
+        [
+          "styled-components",
+          { "ssr": true, "displayName": true, "preprocess": false }
+        ],
+        [
+          "module-resolver",
+          {
+            "root": ["./"],
+            "alias": {
+              "app": "./src/app"
+            }
+          }
+        ]
+      ]
+    },
+    "production": {
+      "presets": ["next/babel"],
+      "plugins": [
+        [
+          "styled-components",
+          { "ssr": true, "displayName": false, "preprocess": false }
+        ],
+        [
+          "module-resolver",
+          {
+            "root": ["./"],
+            "alias": {
+              "app": "./src/app"
+            }
+          }
+        ]
+      ]
+    },
+    "test": {
+      "presets": [["env", { "modules": "commonjs" }], "next/babel"],
+      "plugins": [
+        [
+          "styled-components",
+          { "ssr": true, "displayName": true, "preprocess": false }
+        ],
+        [
+          "module-resolver",
+          {
+            "root": ["./"],
+            "alias": {
+              "app": "./src/app"
+            }
+          }
+        ]
+      ]
+    }
+  },
+
+  "plugins": [
+    [
+      "styled-components",
+      { "ssr": true, "displayName": true, "preprocess": false }
+    ],
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "app": "./src/app"
+        }
+      }
+    ]
+  ]
+}
